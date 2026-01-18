@@ -28,45 +28,68 @@ export default function PrivacyPage() {
 
           <section className="space-y-4">
             <h2 className="text-xl font-semibold text-foreground">2. 収集する情報</h2>
-            <p className="text-foreground/90">
-              本アプリは、以下の情報を収集する場合があります：
-            </p>
+            
+            <h3 className="text-lg font-medium text-foreground">2.1 ユーザーが入力するデータ</h3>
             <ul className="list-disc pl-6 text-foreground/90 space-y-2">
-              <li>ユーザーが作成したノートやメモのデータ</li>
-              <li>アプリの使用状況に関する匿名の分析データ</li>
-              <li>デバイス情報（OSバージョン、デバイスモデルなど）</li>
+              <li>メモ内容（タイトル、本文）：メモ機能の提供のため</li>
+              <li>メモのカテゴリ（Principle / Insight / Other）：メモの分類のため</li>
+            </ul>
+            <p className="text-foreground/90">
+              これらのデータは、ローカル（UserDefaults）に保存されます。サインイン時にはFirebase Firestoreにバックアップとして保存されます。
+            </p>
+
+            <h3 className="text-lg font-medium text-foreground">2.2 Apple Sign-Inで取得するデータ</h3>
+            <ul className="list-disc pl-6 text-foreground/90 space-y-2">
+              <li>メールアドレス（任意）：アカウント識別のため</li>
+              <li>User ID（Apple提供）：Firebase認証のため</li>
             </ul>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-semibold text-foreground">3. 情報の使用目的</h2>
+            <h2 className="text-xl font-semibold text-foreground">3. サードパーティサービス</h2>
+            <p className="text-foreground/90">
+              本アプリは、以下のサードパーティサービスを使用しています：
+            </p>
+            <ul className="list-disc pl-6 text-foreground/90 space-y-2">
+              <li><strong>Firebase Authentication</strong>：ユーザー認証（Apple ID情報を使用）</li>
+              <li><strong>Firebase Firestore</strong>：クラウドバックアップ（メモデータを保存）</li>
+              <li><strong>Google AdMob</strong>：広告表示（無料ユーザー向け、広告ID・デバイス情報を使用）</li>
+              <li><strong>RevenueCat</strong>：サブスクリプション管理（購入情報を使用）</li>
+            </ul>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-xl font-semibold text-foreground">4. データの取り扱い</h2>
+            <ul className="list-disc pl-6 text-foreground/90 space-y-2">
+              <li><strong>ローカルデータ</strong>：UserDefaultsに保存され、アプリ削除時に消去されます</li>
+              <li><strong>クラウドデータ</strong>：サインイン時のみFirestoreに保存され、ユーザー本人のみがアクセス可能です</li>
+              <li><strong>広告データ</strong>：Google AdMobのプライバシーポリシーに準拠します</li>
+              <li><strong>購入データ</strong>：RevenueCatおよびAppleが管理します</li>
+            </ul>
+          </section>
+
+          <section className="space-y-4">
+            <h2 className="text-xl font-semibold text-foreground">5. 情報の使用目的</h2>
             <p className="text-foreground/90">
               収集した情報は、以下の目的で使用されます：
             </p>
             <ul className="list-disc pl-6 text-foreground/90 space-y-2">
-              <li>アプリのサービス提供および機能の改善</li>
-              <li>ユーザーサポートの提供</li>
-              <li>アプリのパフォーマンス分析</li>
+              <li>メモ機能の提供およびクラウドバックアップ・復元</li>
+              <li>ユーザー認証とアカウント管理</li>
+              <li>サブスクリプション管理</li>
+              <li>広告の表示（無料ユーザーのみ）</li>
             </ul>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-semibold text-foreground">4. データの保管</h2>
+            <h2 className="text-xl font-semibold text-foreground">6. 第三者への情報提供</h2>
             <p className="text-foreground/90">
-              ユーザーのノートデータは、お使いのデバイスにローカルで保存されます。
-              クラウド同期機能を使用する場合、データは安全に暗号化された状態で保存されます。
+              本アプリは、上記のサードパーティサービス以外に、法令に基づく場合を除き、ユーザーの個人情報を第三者に提供することはありません。
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-xl font-semibold text-foreground">5. 第三者への情報提供</h2>
-            <p className="text-foreground/90">
-              本アプリは、法令に基づく場合を除き、ユーザーの個人情報を第三者に提供することはありません。
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-xl font-semibold text-foreground">6. お問い合わせ</h2>
+            <h2 className="text-xl font-semibold text-foreground">7. お問い合わせ</h2>
             <p className="text-foreground/90">
               プライバシーに関するご質問やご懸念がある場合は、
               <Link href="/support" className="text-primary underline hover:no-underline">

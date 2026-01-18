@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
@@ -6,6 +7,13 @@ export default function HomePage() {
     <main className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-16">
         <div className="flex flex-col items-center justify-center text-center space-y-8">
+          <Image
+            src="/icon.png"
+            alt="PrincipleNote アイコン"
+            width={120}
+            height={120}
+            className="rounded-2xl"
+          />
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             PrincipleNote
           </h1>
@@ -26,9 +34,6 @@ export default function HomePage() {
           <nav className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
             <Link href="/privacy" className="hover:text-foreground transition-colors">
               プライバシーポリシー
-            </Link>
-            <Link href="/terms" className="hover:text-foreground transition-colors">
-              利用規約
             </Link>
             <Link href="/support" className="hover:text-foreground transition-colors">
               サポート
