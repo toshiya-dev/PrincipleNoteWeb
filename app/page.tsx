@@ -1,6 +1,6 @@
+import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 
 export default function HomePage() {
   return (
@@ -20,14 +20,6 @@ export default function HomePage() {
           <p className="max-w-2xl text-lg text-muted-foreground">
             あなたの大切なアイデアやメモを、シンプルかつ美しく管理できるノートアプリです。
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <Button asChild size="lg">
-              <Link href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
-                App Storeでダウンロード
-              </Link>
-            </Button>
-          </div>
         </div>
 
         <footer className="mt-24 border-t border-border pt-8">
